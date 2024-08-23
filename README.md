@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/dwndlnd/Chapter.Net.BLZ/master/Icon.png" alt="logo" width="64"/>
+<img src="https://raw.githubusercontent.com/dwndland/Chapter.Net.BLZ/master/Icon.png" alt="logo" width="64"/>
 
 # Chapter.Net.BLZ Library
 
@@ -17,7 +17,7 @@
 
 ## Links
 * [NuGet](https://www.nuget.org/packages/Chapter.Net.BLZ)
-* [GitHub](https://github.com/dwndlnd/Chapter.Net.BLZ)
+* [GitHub](https://github.com/dwndland/Chapter.Net.BLZ)
 
 ## License
 Copyright (c) David Wendland. All rights reserved.
