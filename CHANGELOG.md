@@ -8,5 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Init project
+- Added component allowing automatically connecting a razor to its viewmodel
 ### Supported .Net Versions
 - .Net 8
+- .Net 9

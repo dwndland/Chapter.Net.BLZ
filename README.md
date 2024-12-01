@@ -3,9 +3,10 @@
 # Chapter.Net.BLZ Library
 
 ## Overview
+Chapter.Net.BLZ provides features for an easy work with MVVM for blazor applications.
 
 ## Features
-- **:** 
+- **ViewModelComponent:** A component for an easy connecting of viewmodels to a UI component.
 
 ## Getting Started
 
@@ -13,6 +14,24 @@
     - Install the Chapter.Net.BLZ library via NuGet Package Manager:
     ```bash
     dotnet add package Chapter.Net.BLZ
+    ```
+
+2. **Connect a razor page to its viewmodel**
+    ```razor
+    @inherits ViewModelComponent<SetupViewModel>
+
+    <FluentButton OnClick="DataContext.Save">Save</FluentButton>
+    ```
+    ```csharp
+    builder.Services.AddTransient<SetupViewModel>();
+    ```
+    ```csharp
+    public class SetupViewModel : ObservableObject, IViewModel
+    {
+        public void Save()
+        {
+        }
+    }
     ```
 
 ## Links
