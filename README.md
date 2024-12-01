@@ -7,6 +7,7 @@ Chapter.Net.BLZ provides features for an easy work with MVVM for blazor applicat
 
 ## Features
 - **ViewModelComponent:** A component for an easy connecting of viewmodels to a UI component.
+- **AddAutoViewModels:** Automatically registers all IViewModels to the IOC.
 
 ## Getting Started
 
@@ -16,11 +17,14 @@ Chapter.Net.BLZ provides features for an easy work with MVVM for blazor applicat
     dotnet add package Chapter.Net.BLZ
     ```
 
-2. **Connect a razor page to its viewmodel**
+2. **ViewModelComponent (Connect a razor page to its viewmodel)**
     ```razor
     @inherits ViewModelComponent<SetupViewModel>
 
-    <FluentButton OnClick="DataContext.Save">Save</FluentButton>
+    <div class="input-group">
+        <FluentTextField Class="inputField" @bind-Value="@DataContext.Directory"></FluentTextField>
+        <FluentButton OnClick="DataContext.Browse">Browse...</FluentButton>
+    </div>
     ```
     ```csharp
     builder.Services.AddTransient<SetupViewModel>();
@@ -28,9 +32,33 @@ Chapter.Net.BLZ provides features for an easy work with MVVM for blazor applicat
     ```csharp
     public class SetupViewModel : ObservableObject, IViewModel
     {
-        public void Save()
+        public string Directory;
+
+        public void Browse()
         {
+            Directory = "DemoDirectory";
+            // NotifyAndSetIfChanged(ref Directory, "DemoDirectory");
+            // NotifyPropertyChanged(nameof(Directory));
         }
+    }
+    ```
+
+3. **AddAutoViewModels (Automatically registers all IViewModels to the IOC)**
+    ```csharp
+    var builder = WebApplication.CreateBuilder(args);
+    builder.Services.AddAutoViewModels(Assembly.GetExecutingAssembly());
+    builder.Services.AddAutoViewModels(ExtraAssembliesProvider.Assemblies);
+    ```
+    ```csharp
+    public partial class SetupView : ComponentBase
+    {
+        [Inject]
+        public SetupViewModel DataContext { get; set; }
+    }
+    ```
+    ```csharp
+    public class SetupViewModel : ObservableObject, IViewModel
+    {
     }
     ```
 
