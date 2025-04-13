@@ -4,8 +4,8 @@
     <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
     <Version>0.0.1</Version>
     <Authors>David Wendland</Authors>
-    <Description></Description>
-    <Copyright>Copyright (c) 2024 David Wendland</Copyright>
+    <Description>Chapter.Net.BLZ is a Blazor-focused extension of Chapter.Net that provides MVVM support, including base classes and helpers for building clean, maintainable component logic.</Description>
+    <Copyright>Copyright (c) 2025 David Wendland</Copyright>
     <PackageProjectUrl>https://github.com/dwndland/Chapter.Net.BLZ</PackageProjectUrl>
     <PackageIcon>Icon.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>

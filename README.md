@@ -3,7 +3,7 @@
 # Chapter.Net.BLZ Library
 
 ## Overview
-Chapter.Net.BLZ provides features for an easy work with MVVM for blazor applications.
+Chapter.Net.BLZ is a Blazor-focused extension of Chapter.Net that provides MVVM support, including base classes and helpers for building clean, maintainable component logic.
 
 ## Features
 - **ViewModelComponent:** A component for an easy connecting of viewmodels to a UI component.
